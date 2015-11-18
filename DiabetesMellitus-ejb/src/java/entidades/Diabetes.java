@@ -19,7 +19,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.NamedQuery;
 
-
 /**
  *
  * @author User
@@ -43,10 +42,16 @@ public class Diabetes implements Serializable {
     private Integer p08edad;
     private String p09sexo;
     private Double p10talla;
+    private Integer pEtniaIndigena;
     private Double p11peso;
     private Double p12imc;
     private String p13domicilio1;
     private String p14domicilio2;
+    private Integer pEnfCardio;
+    private Integer pHTA;
+    private Integer pDiabetes;
+    private Integer pEnfCerebVascular;
+    private Integer pDislipidemias;
     private Integer p15abuelos;
     private Integer p15padres;
     private Integer p15tios;
@@ -56,6 +61,13 @@ public class Diabetes implements Serializable {
     private Integer p15alcoholismo;
     private Integer p15dislipidemias;
     private Integer p15sedentarismo;
+    private Integer pEnfCardioP;
+    private Integer pHTAP;
+    private Integer pDiabetesP;
+    private Integer pTabaquismo;
+    private Integer pDislipidemiasP;
+    private Integer pPostMenopausia;
+    private Integer pTerapiaDeReemplazo;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date p16fecha;
     private Integer p17deteccionConsulta;
@@ -63,8 +75,22 @@ public class Diabetes implements Serializable {
     private Integer p18tratamientoPrevio;
     private Integer p19diabetesTipo1;
     private Integer p20diabetesTipo2;
-    @OneToMany(mappedBy = "diabetes",cascade = CascadeType.ALL)
+    private Integer pIngreso;
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date pFechaIngreso;
+    private Integer pReingreso;
+    private Integer pDM;
+    private Integer pHArt;
+    private Integer pObesidad;
+    private Integer pDislipidemiasD;
+    private Integer pSindromeMeta;
+    private Integer pPesquisa;
+    private Integer pPorSintomas;
+    private Integer pTratamientoPrevio;
+    @OneToMany(mappedBy = "diabetes", cascade = CascadeType.ALL)
     private List<Control> p21control;
+    @Temporal(javax.persistence.TemporalType.TIMESTAMP)
+    private Date z02fechaCaptura;
 
     public Diabetes() {
         p21control = new ArrayList<Control>();
@@ -166,6 +192,14 @@ public class Diabetes implements Serializable {
         this.p10talla = p10talla;
     }
 
+    public Integer getpEtniaIndigena() {
+        return pEtniaIndigena;
+    }
+
+    public void setpEtniaIndigena(Integer pEtniaIndigena) {
+        this.pEtniaIndigena = pEtniaIndigena;
+    }
+
     public Double getP11peso() {
         return p11peso;
     }
@@ -196,6 +230,46 @@ public class Diabetes implements Serializable {
 
     public void setP14domicilio2(String p14domicilio2) {
         this.p14domicilio2 = p14domicilio2;
+    }
+
+    public Integer getpEnfCardio() {
+        return pEnfCardio;
+    }
+
+    public void setpEnfCardio(Integer pEnfCardio) {
+        this.pEnfCardio = pEnfCardio;
+    }
+
+    public Integer getpHTA() {
+        return pHTA;
+    }
+
+    public void setpHTA(Integer pHTA) {
+        this.pHTA = pHTA;
+    }
+
+    public Integer getpDiabetes() {
+        return pDiabetes;
+    }
+
+    public void setpDiabetes(Integer pDiabetes) {
+        this.pDiabetes = pDiabetes;
+    }
+
+    public Integer getpEnfCerebVascular() {
+        return pEnfCerebVascular;
+    }
+
+    public void setpEnfCerebVascular(Integer pEnfCerebVascular) {
+        this.pEnfCerebVascular = pEnfCerebVascular;
+    }
+
+    public Integer getpDislipidemias() {
+        return pDislipidemias;
+    }
+
+    public void setpDislipidemias(Integer pDislipidemias) {
+        this.pDislipidemias = pDislipidemias;
     }
 
     public Integer getP15abuelos() {
@@ -236,6 +310,62 @@ public class Diabetes implements Serializable {
 
     public void setP15otros(Integer p15otros) {
         this.p15otros = p15otros;
+    }
+
+    public Integer getpEnfCardioP() {
+        return pEnfCardioP;
+    }
+
+    public void setpEnfCardioP(Integer pEnfCardioP) {
+        this.pEnfCardioP = pEnfCardioP;
+    }
+
+    public Integer getpHTAP() {
+        return pHTAP;
+    }
+
+    public void setpHTAP(Integer pHTAP) {
+        this.pHTAP = pHTAP;
+    }
+
+    public Integer getpDiabetesP() {
+        return pDiabetesP;
+    }
+
+    public void setpDiabetesP(Integer pDiabetesP) {
+        this.pDiabetesP = pDiabetesP;
+    }
+
+    public Integer getpTabaquismo() {
+        return pTabaquismo;
+    }
+
+    public void setpTabaquismo(Integer pTabaquismo) {
+        this.pTabaquismo = pTabaquismo;
+    }
+
+    public Integer getpDislipidemiasP() {
+        return pDislipidemiasP;
+    }
+
+    public void setpDislipidemiasP(Integer pDislipidemiasP) {
+        this.pDislipidemiasP = pDislipidemiasP;
+    }
+
+    public Integer getpPostMenopausia() {
+        return pPostMenopausia;
+    }
+
+    public void setpPostMenopausia(Integer pPostMenopausia) {
+        this.pPostMenopausia = pPostMenopausia;
+    }
+
+    public Integer getpTerapiaDeReemplazo() {
+        return pTerapiaDeReemplazo;
+    }
+
+    public void setpTerapiaDeReemplazo(Integer pTerapiaDeReemplazo) {
+        this.pTerapiaDeReemplazo = pTerapiaDeReemplazo;
     }
 
     public Integer getP15obesidad() {
@@ -318,6 +448,94 @@ public class Diabetes implements Serializable {
         this.p20diabetesTipo2 = p20diabetesTipo2;
     }
 
+    public Integer getpIngreso() {
+        return pIngreso;
+    }
+
+    public void setpIngreso(Integer pIngreso) {
+        this.pIngreso = pIngreso;
+    }
+
+    public Date getpFechaIngreso() {
+        return pFechaIngreso;
+    }
+
+    public void setpFechaIngreso(Date pFechaIngreso) {
+        this.pFechaIngreso = pFechaIngreso;
+    }
+
+    public Integer getpReingreso() {
+        return pReingreso;
+    }
+
+    public void setpReingreso(Integer pReingreso) {
+        this.pReingreso = pReingreso;
+    }
+
+    public Integer getpDM() {
+        return pDM;
+    }
+
+    public void setpDM(Integer pDM) {
+        this.pDM = pDM;
+    }
+
+    public Integer getpHArt() {
+        return pHArt;
+    }
+
+    public void setpHArt(Integer pHArt) {
+        this.pHArt = pHArt;
+    }
+
+    public Integer getpObesidad() {
+        return pObesidad;
+    }
+
+    public void setpObesidad(Integer pObesidad) {
+        this.pObesidad = pObesidad;
+    }
+
+    public Integer getpDislipidemiasD() {
+        return pDislipidemiasD;
+    }
+
+    public void setpDislipidemiasD(Integer pDislipidemiasD) {
+        this.pDislipidemiasD = pDislipidemiasD;
+    }
+
+    public Integer getpSindromeMeta() {
+        return pSindromeMeta;
+    }
+
+    public void setpSindromeMeta(Integer pSindromeMeta) {
+        this.pSindromeMeta = pSindromeMeta;
+    }
+
+    public Integer getpPesquisa() {
+        return pPesquisa;
+    }
+
+    public void setpPesquisa(Integer pPesquisa) {
+        this.pPesquisa = pPesquisa;
+    }
+
+    public Integer getpPorSintomas() {
+        return pPorSintomas;
+    }
+
+    public void setpPorSintomas(Integer pPorSintomas) {
+        this.pPorSintomas = pPorSintomas;
+    }
+
+    public Integer getpTratamientoPrevio() {
+        return pTratamientoPrevio;
+    }
+
+    public void setpTratamientoPrevio(Integer pTratamientoPrevio) {
+        this.pTratamientoPrevio = pTratamientoPrevio;
+    }
+
     public List<Control> getP21control() {
         return p21control;
     }
@@ -333,6 +551,16 @@ public class Diabetes implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
+
+    public Date getZ02fechaCaptura() {
+        return z02fechaCaptura;
+    }
+
+    public void setZ02fechaCaptura(Date z02fechaCaptura) {
+        this.z02fechaCaptura = z02fechaCaptura;
+    }
+    
+    
 
     @Override
     public int hashCode() {

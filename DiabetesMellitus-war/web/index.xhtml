@@ -13,7 +13,7 @@ and open the template in the editor.
 
 
     <h:head>
-        <title>Facelet Title</title>        
+        <title>Diabetes Mellitus</title>        
     </h:head>
 
     <h:body>
@@ -22,6 +22,7 @@ and open the template in the editor.
             <ui:define name="left">
                 <h:outputLabel value="Proyecto Diabetes Mellitus"/>
             </ui:define>
+
             <ui:define name="content">  
                 <h:form id="form1">
                     <h:panelGrid columns="10">
@@ -163,6 +164,17 @@ and open the template in the editor.
                         </p:inputText> 
                         <h:outputLabel escape="false" style="font-size: small; font-weight: bold"  for="p10talla" />
                         <p:message id="p10tallaE" for="p10talla" />
+                        
+                        <!-- pEtniaIndigena --> 
+                        <h:outputLabel value="ETNIA INDIGENA: " for="pEtniaIndigena" /> 
+                        <p:inputText id="pEtniaIndigena" size="2" value="#{diabetesMB.diabetes.pEtniaIndigena}" title="ETNIA INDIGENA" onkeypress="return tabular(event, this)" >
+                            <p:ajax update="pEtniaIndigenaE" event="blur" /> 
+                            <f:validator validatorId="validadorCategoria" />
+                            <f:attribute name="valorMissing" value="9"/> 
+                            <f:attribute name="values" value="1|2"/> 
+                        </p:inputText> 
+                        <h:outputLabel escape="false" style="font-size: small; font-weight: bold" value="#{msg.pEtniaIndigena}" for="pEtniaIndigena" /> 
+                        <p:message id="pEtniaIndigenaE" for="pEtniaIndigena" />
 
                         <!-- p11peso --> 
                         <h:outputLabel value="11.-PESO:" for="p11peso" /> 
@@ -209,6 +221,62 @@ and open the template in the editor.
                         </p:inputText> 
                         <h:outputLabel escape="false" style="font-size: small; font-weight: bold"  for="p14domicilio2" /> 
                         <p:message id="p14domicilio2E" for="p14domicilio2" />
+
+                        <!-- pEnfCardio --> 
+                        <h:outputLabel value="ENF CARDIO: " for="pEnfCardio" /> 
+                        <p:inputText id="pEnfCardio" size="2" value="#{diabetesMB.diabetes.pEnfCardio}" title="ENF CARDIOVASCULAR" onkeypress="return tabular(event, this)" >
+                            <p:ajax update="pEnfCardioE" event="blur" /> 
+                            <f:validator validatorId="validadorCategoria" />
+                            <f:attribute name="valorMissing" value="9"/> 
+                            <f:attribute name="values" value="1|2"/> 
+                        </p:inputText> 
+                        <h:outputLabel escape="false" style="font-size: small; font-weight: bold" value="#{msg.pEnfCardio}" for="pEnfCardio" /> 
+                        <p:message id="pEnfCardioE" for="pEnfCardio" />
+
+
+                        <!-- pHTA --> 
+                        <h:outputLabel value="HTA:" for="pHTA" /> 
+                        <p:inputText id="pHTA" size="2" value="#{diabetesMB.diabetes.pHTA}" title="HTA" onkeypress="return tabular(event, this)" >
+                            <p:ajax update="pHTA" event="blur" /> 
+                            <f:validator validatorId="validadorCategoria" />
+                            <f:attribute name="valorMissing" value="9"/> 
+                            <f:attribute name="values" value="1|2"/> 
+                        </p:inputText> 
+                        <h:outputLabel escape="false" style="font-size: small; font-weight: bold" value="#{msg.pHTA}" for="pHTA" /> 
+                        <p:message id="pHTAE" for="pHTA" />
+
+                        <!-- pDiabetes --> 
+                        <h:outputLabel value="DIABETES:" for="pDiabetes" /> 
+                        <p:inputText id="pDiabetes" size="2" value="#{diabetesMB.diabetes.pDiabetes}" title="DIABETES" onkeypress="return tabular(event, this)" >
+                            <p:ajax update="pDiabetes" event="blur" /> 
+                            <f:validator validatorId="validadorCategoria" />
+                            <f:attribute name="valorMissing" value="9"/> 
+                            <f:attribute name="values" value="1|2"/> 
+                        </p:inputText> 
+                        <h:outputLabel escape="false" style="font-size: small; font-weight: bold" value="#{msg.pDiabetes}" for="pDiabetes" /> 
+                        <p:message id="pDiabetesE" for="pDiabetes" />
+
+                        <!-- pEnfCerebVascular --> 
+                        <h:outputLabel value="ENF CEREBROVASCULAR:" for="pEnfCerebVascular" /> 
+                        <p:inputText id="pEnfCerebVascular" size="2" value="#{diabetesMB.diabetes.pEnfCerebVascular}" title="ENF CEREBROVASCULAR" onkeypress="return tabular(event, this)" >
+                            <p:ajax update="pEnfCerebVascular" event="blur" /> 
+                            <f:validator validatorId="validadorCategoria" />
+                            <f:attribute name="valorMissing" value="9"/> 
+                            <f:attribute name="values" value="1|2"/> 
+                        </p:inputText> 
+                        <h:outputLabel escape="false" style="font-size: small; font-weight: bold" value="#{msg.pEnfCerebVascular}" for="pEnfCerebVascular" /> 
+                        <p:message id="pEnfCerebVascularE" for="pEnfCerebVascular" />
+
+                        <!-- pDislipidemias --> 
+                        <h:outputLabel value="DISLIPIDEMIAS:" for="pDislipidemias" /> 
+                        <p:inputText id="pDislipidemias" size="2" value="#{diabetesMB.diabetes.pDislipidemias}" title="DISLIPIDEMIAS" onkeypress="return tabular(event, this)" >
+                            <p:ajax update="pDislipidemias" event="blur" /> 
+                            <f:validator validatorId="validadorCategoria" />
+                            <f:attribute name="valorMissing" value="9"/> 
+                            <f:attribute name="values" value="1|2"/> 
+                        </p:inputText> 
+                        <h:outputLabel escape="false" style="font-size: small; font-weight: bold" value="#{msg.pDislipidemias}" for="pDislipidemias" /> 
+                        <p:message id="pDislipidemiasE" for="pDislipidemias" />
 
                         <!-- p15abuelos --> 
                         <h:outputLabel value="15.-ABUELOS:" for="p15abuelos" /> 
@@ -264,6 +332,84 @@ and open the template in the editor.
                         </p:inputText> 
                         <h:outputLabel escape="false" style="font-size: small; font-weight: bold" value="#{msg.p15otros}" for="p15otros" /> 
                         <p:message id="p15otrosE" for="p15otros" />
+
+                        <!-- pEnfCardioP --> 
+                        <h:outputLabel value="ENF CARDIO: " for="pEnfCardioP" /> 
+                        <p:inputText id="pEnfCardioP" size="2" value="#{diabetesMB.diabetes.pEnfCardioP}" title="ENF CARDIOVASCULAR P" onkeypress="return tabular(event, this)" >
+                            <p:ajax update="pEnfCardioPE" event="blur" /> 
+                            <f:validator validatorId="validadorCategoria" />
+                            <f:attribute name="valorMissing" value="9"/> 
+                            <f:attribute name="values" value="1|2"/> 
+                        </p:inputText> 
+                        <h:outputLabel escape="false" style="font-size: small; font-weight: bold" value="#{msg.pEnfCardioP}" for="pEnfCardioP" /> 
+                        <p:message id="pEnfCardioPE" for="pEnfCardioP" />
+
+
+                        <!-- pHTAP --> 
+                        <h:outputLabel value="HTA:" for="pHTAP" /> 
+                        <p:inputText id="pHTAP" size="2" value="#{diabetesMB.diabetes.pHTAP}" title="HTAP" onkeypress="return tabular(event, this)" >
+                            <p:ajax update="pHTAP" event="blur" /> 
+                            <f:validator validatorId="validadorCategoria" />
+                            <f:attribute name="valorMissing" value="9"/> 
+                            <f:attribute name="values" value="1|2"/> 
+                        </p:inputText> 
+                        <h:outputLabel escape="false" style="font-size: small; font-weight: bold" value="#{msg.pHTAP}" for="pHTAP" /> 
+                        <p:message id="pHTAPE" for="pHTAP" />
+
+                        <!-- pDiabetesP --> 
+                        <h:outputLabel value="DIABETES:" for="pDiabetesP" /> 
+                        <p:inputText id="pDiabetesP" size="2" value="#{diabetesMB.diabetes.pDiabetesP}" title="DIABETES P" onkeypress="return tabular(event, this)" >
+                            <p:ajax update="pDiabetesP" event="blur" /> 
+                            <f:validator validatorId="validadorCategoria" />
+                            <f:attribute name="valorMissing" value="9"/> 
+                            <f:attribute name="values" value="1|2"/> 
+                        </p:inputText> 
+                        <h:outputLabel escape="false" style="font-size: small; font-weight: bold" value="#{msg.pDiabetesP}" for="pDiabetesP" /> 
+                        <p:message id="pDiabetesPE" for="pDiabetesP" />
+
+                        <!-- pTabaquismo --> 
+                        <h:outputLabel value="TABAQUISMO:" for="pTabaquismo" /> 
+                        <p:inputText id="pTabaquismo" size="2" value="#{diabetesMB.diabetes.pTabaquismo}" title="TABAQUISMO" onkeypress="return tabular(event, this)" >
+                            <p:ajax update="pTabaquismo" event="blur" /> 
+                            <f:validator validatorId="validadorCategoria" />
+                            <f:attribute name="valorMissing" value="9"/> 
+                            <f:attribute name="values" value="1|2"/> 
+                        </p:inputText> 
+                        <h:outputLabel escape="false" style="font-size: small; font-weight: bold" value="#{msg.pTabaquismo}" for="pTabaquismo" /> 
+                        <p:message id="pTabaquismoE" for="pTabaquismo" />
+
+                        <!-- pDislipidemiasP --> 
+                        <h:outputLabel value="DISLIPIDEMIAS:" for="p15dislipidemiasP" /> 
+                        <p:inputText id="pDislipidemiasP" size="2" value="#{diabetesMB.diabetes.pDislipidemiasP}" title="DISLIPIDEMIAS" onkeypress="return tabular(event, this)" >
+                            <p:ajax update="pDislipidemiasPE" event="blur" /> 
+                            <f:validator validatorId="validadorCategoria" /> 
+                            <f:attribute name="valorMissing" value="9"/> 
+                            <f:attribute name="values" value="1|2"/> 
+                        </p:inputText> 
+                        <h:outputLabel escape="false" style="font-size: small; font-weight: bold"  for="pDislipidemiasP" /> 
+                        <p:message id="pDislipidemiasPE" for="pDislipidemiasP" />
+
+                        <!-- pPostMenopausia --> 
+                        <h:outputLabel value="POST MENOPAUSIA:" for="pPostMenopausia" /> 
+                        <p:inputText id="pPostMenopausia" size="2" value="#{diabetesMB.diabetes.pPostMenopausia}" title="POST MENOPAUSIA" onkeypress="return tabular(event, this)" >
+                            <p:ajax update="pPostMenopausiaE" event="blur" /> 
+                            <f:validator validatorId="validadorCategoria" /> 
+                            <f:attribute name="valorMissing" value="9"/> 
+                            <f:attribute name="values" value="1|2"/> 
+                        </p:inputText> 
+                        <h:outputLabel escape="false" style="font-size: small; font-weight: bold" value="#{msg.pPostMenopausia}" for="pPostMenopausia" /> 
+                        <p:message id="pPostMenopausiaE" for="pPostMenopausia" />
+
+                        <!-- pTerapiaDeReemplazo --> 
+                        <h:outputLabel value="TERAPIA DE REEMPLAZO:" for="pTerapiaDeReemplazo" /> 
+                        <p:inputText id="pTerapiaDeReemplazo" size="2" value="#{diabetesMB.diabetes.pTerapiaDeReemplazo}" title="TERAPIA DE REEMPLAZO" onkeypress="return tabular(event, this)" >
+                            <p:ajax update="pTerapiaDeReemplazoE" event="blur" /> 
+                            <f:validator validatorId="validadorCategoria" /> 
+                            <f:attribute name="valorMissing" value="9"/> 
+                            <f:attribute name="values" value="1|2"/> 
+                        </p:inputText> 
+                        <h:outputLabel escape="false" style="font-size: small; font-weight: bold" value="#{msg.pTerapiaDeReemplazo}" for="pTerapiaDeReemplazo" /> 
+                        <p:message id="pTerapiaDeReemplazoE" for="pTerapiaDeReemplazo" />
 
                         <!-- p15obesidad --> 
                         <h:outputLabel value="15.-OBESIDAD:" for="p15obesidad" /> 
@@ -374,9 +520,130 @@ and open the template in the editor.
                         </p:inputText> 
                         <h:outputLabel escape="false" style="font-size: small; font-weight: bold"  value="#{msg.p19diabetesTipo1}" for="p20diabetesTipo2" /> 
                         <p:message id="p20diabetesTipo2E" for="p20diabetesTipo2" />
+
+                        <!-- pIngreso --> 
+                        <h:outputLabel value="INGRESO:" for="pIngreso" /> 
+                        <p:inputText id="pIngreso" size="2" value="#{diabetesMB.diabetes.pIngreso}" title="INGRESO" onkeypress="return tabular(event, this)"> 
+                            <p:ajax update="pIngresoE" event="blur" /> 
+                            <f:validator validatorId="validadorCategoria" /> 
+                            <f:attribute name="valorMissing" value="9"/> 
+                            <f:attribute name="values" value="1|2"/> 
+                        </p:inputText> 
+                        <h:outputLabel escape="false" style="font-size: small; font-weight: bold"  value="#{msg.pIngreso}" for="pIngreso" /> 
+                        <p:message id="pIngresoE" for="pIngreso" />
+
+                        <!-- pFechaIngreso --> 
+                        <h:outputLabel value="FECHA INGRESO" for="pFechaIngreso" /> 
+                        <p:inputMask id="pFechaIngreso" size="5" mask="99/99/9999" value="#{diabetesMB.diabetes.pFechaIngreso}" title="FECHA INGRESO" onkeypress="return tabular(event, this)" > 
+                            <f:convertDateTime pattern="dd/MM/yyyy" /> 
+                            <p:ajax update="pFechaIngresoE" event="blur" /> 
+                            <f:validator validatorId="validadorFecha" /> 
+                            <f:attribute name="startDate" value="31/12/1989"/> 
+                            <f:attribute name="endDate" value="30/12/2015"/> 
+                        </p:inputMask> 
+                        <h:outputLabel escape="false" style="font-size: small; font-weight: bold"  for="pFechaIngreso" /> 
+                        <p:message id="pFechaIngresoE" for="pFechaIngreso" />
+
+                        <!-- pReingreso --> 
+                        <h:outputLabel value="REINGRESO:" for="pReingreso" /> 
+                        <p:inputText id="pReingreso" size="2" value="#{diabetesMB.diabetes.pReingreso}" title="REINGRESO" onkeypress="return tabular(event, this)"> 
+                            <p:ajax update="pReingresoE" event="blur" /> 
+                            <f:validator validatorId="validadorCategoria" /> 
+                            <f:attribute name="valorMissing" value="9"/> 
+                            <f:attribute name="values" value="1|2"/> 
+                        </p:inputText> 
+                        <h:outputLabel escape="false" style="font-size: small; font-weight: bold"  value="#{msg.pReingreso}" for="pReingreso" /> 
+                        <p:message id="pReingresoE" for="pReingreso" />
+                        
+                        <!-- pDM --> 
+                        <h:outputLabel value="D.M.:" for="pDM" /> 
+                        <p:inputText id="pDM" size="2" value="#{diabetesMB.diabetes.pDM}" title="D.M." onkeypress="return tabular(event, this)" > 
+                            <p:ajax update="pDME" event="blur" /> 
+                            <f:validator validatorId="validadorCategoria" /> 
+                            <f:attribute name="valorMissing" value="9"/> 
+                            <f:attribute name="values" value="1|2"/> 
+                        </p:inputText> 
+                        <h:outputLabel escape="false" style="font-size: small; font-weight: bold"  value="#{msg.pDM}" for="pDM" /> 
+                        <p:message id="pDME" for="pDM" />
+                        
+                        <!-- pHArt --> 
+                        <h:outputLabel value="H ART:" for="pHArt" /> 
+                        <p:inputText id="pHArt" size="2" value="#{diabetesMB.diabetes.pHArt}" title="H ART" onkeypress="return tabular(event, this)" > 
+                            <p:ajax update="pHArtE" event="blur" /> 
+                            <f:validator validatorId="validadorCategoria" /> 
+                            <f:attribute name="valorMissing" value="9"/> 
+                            <f:attribute name="values" value="1|2"/> 
+                        </p:inputText> 
+                        <h:outputLabel escape="false" style="font-size: small; font-weight: bold"  value="#{msg.pHArt}" for="pHArt" /> 
+                        <p:message id="pHArtE" for="pHArt" />
+
+                        <!-- pObesidad --> 
+                        <h:outputLabel value="OBESIDAD:" for="pObesidad" /> 
+                        <p:inputText id="pObesidad" size="2" value="#{diabetesMB.diabetes.pObesidad}" title="OBESIDAD" onkeypress="return tabular(event, this)" > 
+                            <p:ajax update="pObesidadE" event="blur" /> 
+                            <f:validator validatorId="validadorCategoria" /> 
+                            <f:attribute name="valorMissing" value="9"/> 
+                            <f:attribute name="values" value="1|2"/> 
+                        </p:inputText> 
+                        <h:outputLabel escape="false" style="font-size: small; font-weight: bold" value="#{msg.pObesidad}" for="pObesidad" /> 
+                        <p:message id="pObesidadE" for="pObesidad" />
+                        
+                        <!-- pDislipidemiasD --> 
+                        <h:outputLabel value="DISLIPIDEMIAS:" for="pDislipidemiasD" /> 
+                        <p:inputText id="pDislipidemiasD" size="2" value="#{diabetesMB.diabetes.pDislipidemiasD}" title="DISLIPIDEMIAS" onkeypress="return tabular(event, this)" >
+                            <p:ajax update="pDislipidemiasDE" event="blur" /> 
+                            <f:validator validatorId="validadorCategoria" /> 
+                            <f:attribute name="valorMissing" value="9"/> 
+                            <f:attribute name="values" value="1|2"/> 
+                        </p:inputText> 
+                        <h:outputLabel escape="false" style="font-size: small; font-weight: bold"  for="pDislipidemiasD" /> 
+                        <p:message id="pDislipidemiasDE" for="pDislipidemiasD" />
+                        
+                        <!-- pSindromeMeta --> 
+                        <h:outputLabel value="SINDROME METABOLICO:" for="pSindromeMeta" /> 
+                        <p:inputText id="pSindromeMeta" size="2" value="#{diabetesMB.diabetes.pSindromeMeta}" title="SINDROME METABOLICO" onkeypress="return tabular(event, this)" >
+                            <p:ajax update="pSindromeMetaE" event="blur" /> 
+                            <f:validator validatorId="validadorCategoria" /> 
+                            <f:attribute name="valorMissing" value="9"/> 
+                            <f:attribute name="values" value="1|2"/> 
+                        </p:inputText> 
+                        <h:outputLabel escape="false" style="font-size: small; font-weight: bold" value="#{msg.pSindromeMeta}" for="pSindromeMeta" /> 
+                        <p:message id="pSindromeMetaE" for="pSindromeMeta" />
+                        
+                        <!-- pPesquisa --> 
+                        <h:outputLabel value="PESQUISA:" for="pSindromeMeta" /> 
+                        <p:inputText id="pPesquisa" size="2" value="#{diabetesMB.diabetes.pPesquisa}" title="PESQUISA" onkeypress="return tabular(event, this)" >
+                            <p:ajax update="pPesquisaE" event="blur" /> 
+                            <f:validator validatorId="validadorCategoria" /> 
+                            <f:attribute name="valorMissing" value="9"/> 
+                            <f:attribute name="values" value="1|2"/> 
+                        </p:inputText> 
+                        <h:outputLabel escape="false" style="font-size: small; font-weight: bold" value="#{msg.pPesquisa}" for="pPesquisa" /> 
+                        <p:message id="pPesquisaE" for="pPesquisa" />
+                        
+                         <!-- pPorSintomas --> 
+                        <h:outputLabel value="POR SINTOMATOLOGIA:" for="pPorSintomas" /> 
+                        <p:inputText id="pPorSintomas" size="2" value="#{diabetesMB.diabetes.pPorSintomas}" title="POR SINTOMATOLOGIA" onkeypress="return tabular(event, this)" >
+                            <p:ajax update="pPorSintomasE" event="blur" /> 
+                            <f:validator validatorId="validadorCategoria" /> 
+                            <f:attribute name="valorMissing" value="9"/> 
+                            <f:attribute name="values" value="1|2"/> 
+                        </p:inputText> 
+                        <h:outputLabel escape="false" style="font-size: small; font-weight: bold" value="#{msg.pPorSintomas}" for="pPorSintomas" /> 
+                        <p:message id="pPorSintomasE" for="pPorSintomas" />
+
+                        <!-- pTratamientoPrevio --> 
+                        <h:outputLabel value="TRATAMIENTO PREVIO:" for="pTratamientoPrevio" /> 
+                        <p:inputText id="pTratamientoPrevio" size="2" value="#{diabetesMB.diabetes.pTratamientoPrevio}" title="TRATAMIENTO PREVIO" onkeypress="return tabular(event, this)" >
+                            <p:ajax update="pTratamientoPrevioE" event="blur" /> 
+                            <f:validator validatorId="validadorCategoria" /> 
+                            <f:attribute name="valorMissing" value="9"/> 
+                            <f:attribute name="values" value="1|2"/> 
+                        </p:inputText> 
+                        <h:outputLabel escape="false" style="font-size: small; font-weight: bold" value="#{msg.pTratamientoPrevio}" for="pTratamientoPrevio" /> 
+                        <p:message id="pTratamientoPrevioE" for="pTratamientoPrevio" />
+                        
                     </h:panelGrid>
-
-
 
                 </h:form>
                 <p:growl id="mensajes" globalOnly="true" sticky="true"  showDetail="true"/> 
@@ -573,19 +840,18 @@ and open the template in the editor.
                             <p:message id="p36observacionesE" for="p36observaciones"   />
 
 
-                            <p:commandButton id="reset2" update="@form" value="Reset" type="reset"/>
+
+
                             <p:commandButton id="agregar" value="Agregar" update="@form " action="#{diabetesMB.reinit()}" >
                                 <p:collector value="#{diabetesMB.controlTmp}" addTo="#{diabetesMB.diabetes.p21control}" unique="true"/>
                             </p:commandButton>
+                            <p:commandButton id="reset2" update="@form" value="Reset" type="reset"/>    
                         </h:panelGrid>
                     </p:panel>
 
                     <p:outputPanel id="listas">
                         <p:dataTable value="#{diabetesMB.diabetes.p21control}" var="c" 
-                                     id="lista" style="background-color:#036fab "
-
-                                     >
-
+                                     id="lista" style="background-color:#036fab ">
 
                             <p:column headerText="Fecha" width="30">
                                 <h:outputText value="#{c.p21fecha}" />
@@ -677,14 +943,13 @@ and open the template in the editor.
                         </p:dataTable>                    
                     </p:outputPanel>
 
-
-
                 </h:form>
+
                 <div style="position: fixed;right: 10%;top: 25%;  width: 8em;  ">
+                    <p:commandButton id="guardar"  update="form1 form2 mensajes" value="Guardar Formato" actionListener="#{diabetesMB.guardarTarjetaDiabetes()}"/>
                     <p:commandButton id="reset" update="form1" value="Reset" type="reset"/>
-                    <p:commandButton id="guardar"  update="form1 form2 mensajes" value="Guardar Formato" actionListener="#{diabetesMB.guardarTarjetaDiabetes()}"
-                                     />
                 </div>
+
             </ui:define>
         </ui:composition>
     </h:body>

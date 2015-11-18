@@ -85,6 +85,7 @@ public class DiabetesMB implements Serializable {
     }
 
     public void guardarTarjetaDiabetes() {
+        diabetes.setZ02fechaCaptura(new Date());
         for(Control c : diabetes.getP21control()){
             c.setDiabetes(diabetes);
         }
